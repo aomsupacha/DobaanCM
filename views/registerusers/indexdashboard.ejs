@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap4-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Bootstrapicon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/fb582823d6.js" crossorigin="anonymous"></script>
+
+      <!--Feathericon-->
+      <script src="https://unpkg.com/feather-icons"></script>
+      <!--Link to CSS File-->
+      <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<!--CSS-->
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  <div class="page">  
+    <div class="main">  
+    <!--Banner-->
+    <div class="container">
+    <header class="bg-top mx-auto">
+      <div class="header-banner mx-auto">
+        <div class="row">
+         <div class="col-6 pr-2"> 
+         <a itemprop="url" class="logo" href="#">
+           <img class="ban1" itemprop="logo" src="/images/Banner1.png" width="250" height="85">
+         </a>
+        </div>
+        <div class="col-4 pt-2">
+         <a itemprop="url" class="logo" href="#">
+          <img class="ban2" itemprop="logo" src="/images/banner2.jpg" width="635" height="73">
+        </a>
+        </div>
+        </div>
+      </div>
+      </header>
+    </div>
+    </div>
+
+      
+  <!--Navbar-->
+  <%- include('../layout') %>      
+
+<div class="pagebody">   
+    
+
+  <!--ตรงนี้-->
+
+<!--SideBar Dashboard-->
+<section class="dashboard">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block-mystock">
+                <div class="row">
+                    <!--Left Side-->
+                    <div class="col-md-3 col-sm-4 col-xs-12 hidden-xs">
+                        <div class="mystock-menu-bar">
+                            <div class="user-show">
+                                <div class="row text-center">
+                                <div class="user-profile container">
+                                  <h2 align="center">Hello : <%= registeruser.username %></h2>
+                                    <div class="image">
+                                        <img src="/images/no_image.png" class="ui avatar image">
+                                    </div>
+                                    <div class="desc">
+                                        <div class="name-profile">
+                                           
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            </div>
+                            <div class="user-submenu">
+                                <ul class="ul-menu">
+                                    <li>
+                                        <div>
+                                            <a class="mylist-menu-title" href="#">
+                                            <div class="icon-list-menu">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                              </svg>รายการประกาศ
+                                            </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                      <div>
+                                          <a class="mylist-menu-title" href="/registerusers/add">
+                                          <div class="icon-list-menu">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16" style="border-top: -50px;">
+                                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                            </svg>เพิ่มประกาศ
+                                          </div>
+                                          </a>
+                                      </div>
+                                  </li>
+                                  <li>
+                                    <div>
+                                        <a class="mylist-menu-title" href="/users/logout">
+                                        <div class="icon-list-menu">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16" style="border-top: -50px;">
+                                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                          </svg>ลงชื่อออก
+                                        </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Right Side-->
+                    <div class="col-md-9 col-sm-8 col-xs-12">
+                        <div class="block-tabs box-shadow">
+                            <div class="nav-content">
+                                <h1 class="list-adv">
+                                    <div class="list-order">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                      </svg>
+                                      รายการประกาศ
+                                    </div>
+                                </h1>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tabpanel">
+                              <% if(registeruser.listings){ %>
+                                <% for (var result of registeruser.listings){ %>
+                                <div class="head-item bg-mylist-card">
+                                    <div class="row mylist-item bg-white" style="padding: 0px;">
+                                        <div class="col-md-4 col-sm-12 col-xs-12 item-img mystock-shadow-img" style="padding: 0px; border-top-left-radius: 8px; border-bottom-left-radius: 8px;">
+                                            <a href="#">
+                                                <img src="<%= result.image %>" alt=""  height="217px" style="width: 100%;">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-8 col-sm-12 col-xs-12 contentt by-item-img">
+                                            <div class="row">
+                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="mylist-title">
+                                                        <div class="limit-title-ms">
+                                                          <%= result.listing_title %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <div style="display: flex;align-items: center;flex-wrap: wrap;">
+                                                        <p class="mylist-price">฿ <%= result.listing_price %> บาท</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="min-height: 30px;">
+                                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                                  <div >
+                                                      <p class="mystock-id">รหัสทรัพย์ : <%= result.listing_id %></p>
+                                                  </div>
+                                              </div>
+                                      
+                                          </div>
+                                            <div class="row manage">
+                                                <div class="col-md-4"></div>
+                                                <div class="hid-hr-l col-md-4 col-sm-4 col-xs-4 text-center mylist-edit">
+                                                  <a href="/registerusers/edit/<%= result._id %>"><div class="btn-in-ms btn-in-default">
+                                                        <label style="margin-bottom: 4px;"><i class="bi bi-pencil-square" ></i> Edit</label>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                                <div class="hid-hr-l col-md-4 col-sm-4 col-xs-4 text-center mylist-delete" >
+                                                    <a href="/dashboards/delete/<%= result._id %>"><div class="btn-in-ms btn-in-default">
+                                                        <label style="margin-bottom: 4px;"><i class="bi bi-trash"></i> Delete</label>
+                                                    </div></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /Head item -->
+                                <% } %>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Right Side -->
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+</div>
+
+</div><!--Page-->
+
+    
+
+<!--Footer-->
+<div class="container-fluid" style="margin-top: auto; margin-left: auto; padding-top: 20px;">
+      <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Dobaan Chiangmai
+          </h6>
+          <p>
+            เว็บไซต์อสังหาริมทรัพย์อันดับต้นๆของประเทศไทย ที่ที่เป็นจุดเริ่มต้นของผู้ที่กำลังมองหาอสังหาริมทรัพย์ ไม่ว่าจะเป็นการซื้อ-เช่าเพื่ออยู่อาศัย หรือลงทุน บนเว็บไซต์ Dobaan Chiangmai คุณจะพบกับอสังหาริมทรัพย์ทั้งประกาศขาย หรือให้เช่า บ้านเดี่ยว คอนโด ทาวน์เฮ้าส์ ทาวน์โฮม ที่ดิน อพาร์ทเมนท์ หอพัก และตึกแถว อาคารพาณิชย์หลากหลายรายการ รวมทั้งโครงการใหม่
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            ค้นหา
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">สำหรับขาย</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">สำหรับเช่า</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">โครงการใหม่</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">บริษัทพัฒนาอสังหาริมทรัพย์</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            เกี่ยวกับ
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">เกี่ยวกับเรา</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">ติดต่อเรา</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">ร่วมงานกับเรา</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">นโยบายความเป็นส่วนตัว</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            ติดต่อเรา
+          </h6>
+          <p><i class="fas fa-home me-3"></i> ต.สุเทพ อ.เมืองเชียงใหม่ จ.เชียงใหม่</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            m.wjiranon@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Dobaanchiangmai.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+    </div>
+
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    feather.replace()
+
+    $(document).ready(function(){
+        $(".ul-menu li a").click(function () {
+           $("ul li a").removeClass("bc-menu-active");
+           $(this).addClass("bc-menu-active");   
+        });
+    })
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+</body>
+</html>

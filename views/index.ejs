@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Bootstrapicon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/fb582823d6.js" crossorigin="anonymous"></script>
+
+      <!--Feathericon-->
+      <script src="https://unpkg.com/feather-icons"></script>
+      <!--Link to CSS File-->
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+      <!--Ajax-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+      <!--Jquery-->
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      
+      
+    
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+ 
+    <!--Auto Complete-->
+    <script>
+      $(function() {
+         var availableTutorials = [
+            "Hue Sukhumvit 62/3",
+            "Elio Sukhumvit 64",
+            "A Space Me",
+            "iCondo สุขุมวิท 105",
+            "Elio Del Ray",
+            "Regent Home 7",
+            "Lumpini Ville",
+            "The Parkland บางนา 74",
+            "ลุมพินี เมกะซิตี้บางนา",
+            "ลุมพินี วิลล์ อ่อนนุช 46",
+            "Santitham ville",
+            "Ideo mobi"
+         ];
+         $( "#automplete-3" ).autocomplete({
+            minLength:2,   
+            delay:500,   
+            source: availableTutorials
+         });
+      });
+   </script>
+   <!-- /Auto complete --> 
+  </head>
+  <body>  
+<div class="page">   
+ <!--Banner-->
+  <header class="bg-top mx-auto" style="position: relative;">
+  <div class="header-banner mx-auto container">
+    <div class="row">
+     <div class="col-6 pr-2"> 
+         <a itemprop="url" class="logo" href="#">
+         <img class="ban1" itemprop="logo" src="images/Banner1.png" width="250" height="85">
+          </a>
+     </div>
+      <div class="col-4 pt-2">
+        <a itemprop="url" class="logo" href="#">
+         <img class="ban2" itemprop="logo" src="images/banner2.jpg" width="635" height="73">
+         </a>
+      </div>
+   </div>
+  </div>
+  </header>
+    <!-- /nav-->
+    <%- include('layout') %>      
+
+    <!--Masterhead-->
+    <div class="masterhead-container" style=" background-image:url('images/BG1.jpg'); ">
+      <div class="container-fluid" >
+        
+      </div>
+    </div>          
+
+ <!--Search Box-->
+ <section class="search-sec col-3 mx-auto mb-md-2" style="border-radius: 8px;">
+  <div class="container">
+      <form action="/searchs/search" method="get" novalidate="novalidate">
+          <div class="row">
+              <div class="col align-self-center" style="color: aliceblue;">
+                  <div class="row">
+                      <div class="col-lg-8 col-md-3 col-sm-12 p-0" >
+                          <input type="text" class="form-control search-slt" placeholder="พิมพ์ชื่อโครงการ" name="projectname" id="automplete-3" style="color: aliceblue; font-family: 'Sarabun', sans-serif; font-size: 25px;" >
+                          <ul class="list-group" id="result"></ul>
+                          <br />                      
+                      </div>
+                      
+                      <div class="col-lg-4 col-md-3 col-sm-12 p-0">
+                          <button type="submit" class="btn btn-danger wrn-btn">Search</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+ </section>
+
+  <!--Content Show list index-->
+  <div class="container-fluid" style="margin-top: -110px; padding-top: 22px;">
+        <!--New Post-->
+        <div class="container padding-0 new-topic">
+
+                    <% if(locals.listings){ %>
+                      <div class="row new-topic-list">
+                      <% Object.values(listings).forEach(function(listinged){%>
+                          <div class="visible-md visible-lg vivible-xs col-md-3 col-xs-6">
+                              <div class="istock-list" id="list906654">
+                        
+                      <div class="item-img">
+                          <div class="listing-cost"><%= listinged.listing_price %> บาท / เดือน</div>
+                          <a href="/dashboards/<%= listinged._id %>" class title="" target="_blank" rel="noopene" style="text-decoration:none">
+                              <img src="/uploads/<%= listinged.image %>" alt="" class="img-responsive image-istock">
+                          </a>
+                      </div>
+                      <div class="item-desc">
+                          <div class="row">
+                              <div class="col-md-12 col-sm-12" style="  height: 70px; line-height: 34px; margin-left: 0.5rem; margin-right: 0.5rem;  font-size: 20px; overflow: hidden;">
+                                  <a href="/dashboards/<%= listinged._id %>" class title="" target="_blank" rel="noopene" style="text-decoration:none;">
+                                      <p class="font-sarabun">                  
+                                        <%= listinged.listing_title %>
+                                      </p>
+                                  </a>
+                              </div>
+                              <div class="col-md-12 col-sm-12" style="height: 46px; line-height: 30px; margin-left: 0.5rem; margin-right: 0.5rem;  font-size: 20px;">
+                                    <p class="font-sarabun">                  
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                        <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                      </svg> <%= listinged.projectname %>
+                                    </p>
+                            </div>
+                          </div>
+                          <hr style="margin-top: 4px; margin-bottom: 2px;">
+                          <div class="row" style="padding-top: 3px;">
+                              <div class="col-md-12 col-sm-12 div-ic-detail" style="font-size: 20px;">
+                                  <div class="row" style="margin-left: 8.33333333%;">
+                                      <div class="ic-detail col-6">
+                                          <img src="https://www.livinginsider.com/assets18/images/icon/ic-useful-space.png" width="14" height="14"> <%= listinged.sizeroom %> ตารางเมตร
+                                      </div>
+                                      <div class=" ic-detail col-6">
+                                          <img src="https://www.livinginsider.com/assets18/images/icon/ic-floor-lift.png" width="14" height="14"> ชั้น <%= listinged.floor %>
+                                      </div>
+                                  </div>
+                                  <div class="row" style="margin-left: 8.33333333%;">
+                                      <div class="ic-detail col-6 ">
+                                          <img src="https://www.livinginsider.com/assets18/images/icon/ic-room-bed.png" width="14" height="14"> <%= listinged.roomtype %> ห้องนอน
+                                      </div>
+                                      <div class="ic-detail col-6">
+                                          <img src="https://www.livinginsider.com/assets18/images/icon/ic-bathroom-2.png" width="14" height="14"> <%= listinged.bathroom %> ห้องน้ำ
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>     
+
+                      <%})%>
+                    </div>
+                      <%}%>
+          
+
+      
+          <!-- /new-topic-list-->
+      </div>
+  
+  
+  </div>
+
+
+
+</div>
+
+
+
+
+<!--Footer-->
+<div class="container-fluid" style="margin-top: auto; margin-left: auto; padding-top: 20px;">
+  <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+<!-- Section: Social media -->
+<section
+class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+>
+<!-- Left -->
+<div class="me-5 d-none d-lg-block">
+  <span>Get connected with us on social networks:</span>
+</div>
+<!-- Left -->
+
+<!-- Right -->
+<div>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-google"></i>
+  </a>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-github"></i>
+  </a>
+</div>
+<!-- Right -->
+</section>
+<!-- Section: Social media -->
+
+<!-- Section: Links  -->
+<section class="">
+<div class="container text-center text-md-start mt-5">
+  <!-- Grid row -->
+  <div class="row mt-3">
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+      <!-- Content -->
+      <h6 class="text-uppercase fw-bold mb-4">
+        <i class="fas fa-gem me-3"></i>Dobaan Chiangmai
+      </h6>
+      <p>
+        เว็บไซต์อสังหาริมทรัพย์อันดับต้นๆของประเทศไทย ที่ที่เป็นจุดเริ่มต้นของผู้ที่กำลังมองหาอสังหาริมทรัพย์ ไม่ว่าจะเป็นการซื้อ-เช่าเพื่ออยู่อาศัย หรือลงทุน บนเว็บไซต์ Dobaan Chiangmai คุณจะพบกับอสังหาริมทรัพย์ทั้งประกาศขาย หรือให้เช่า บ้านเดี่ยว คอนโด ทาวน์เฮ้าส์ ทาวน์โฮม ที่ดิน อพาร์ทเมนท์ หอพัก และตึกแถว อาคารพาณิชย์หลากหลายรายการ รวมทั้งโครงการใหม่
+      </p>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+      <!-- Links -->
+      <h6 class="text-uppercase fw-bold mb-4">
+        ค้นหา
+      </h6>
+      <p>
+        <a href="#!" class="text-reset">สำหรับขาย</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">สำหรับเช่า</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">โครงการใหม่</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">บริษัทพัฒนาอสังหาริมทรัพย์</a>
+      </p>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+      <!-- Links -->
+      <h6 class="text-uppercase fw-bold mb-4">
+        เกี่ยวกับ
+      </h6>
+      <p>
+        <a href="#!" class="text-reset">เกี่ยวกับเรา</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">ติดต่อเรา</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">ร่วมงานกับเรา</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">นโยบายความเป็นส่วนตัว</a>
+      </p>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+      <!-- Links -->
+      <h6 class="text-uppercase fw-bold mb-4">
+        ติดต่อเรา
+      </h6>
+      <p><i class="fas fa-home me-3"></i> ต.สุเทพ อ.เมืองเชียงใหม่ จ.เชียงใหม่</p>
+      <p>
+        <i class="fas fa-envelope me-3"></i>
+        m.wjiranon@gmail.com
+      </p>
+      <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+      <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+    </div>
+    <!-- Grid column -->
+  </div>
+  <!-- Grid row -->
+</div>
+</section>
+<!-- Section: Links  -->
+
+<!-- Copyright -->
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+© 2021 Copyright:
+<a class="text-reset fw-bold" href="https://mdbootstrap.com/">Dobaanchiangmai.com</a>
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->
+</div>
+
+<!--/ page-->
+ <!--Bootstrap js-->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
+
+ <script>
+  $(document).ready(function(){
+   $.ajaxSetup({ cache: false });
+   $('#search').keyup(function(){
+    $('#result').html('');
+    $('#state').val('');
+    var searchField = $('#search').val();
+    var expression = new RegExp(searchField, "i");
+    $.getJSON('data.json', function(data) {
+     $.each(data, function(key, value){
+      if (value.projectname.search(expression) != -1 || value.location.search(expression) != -1)
+      {
+       $('#result').append('<li class="list-group-item link-class"><img src="'+value.image+'" height="40" width="40" class="img-thumbnail" /> '+value.projectname+' | <span class="text-muted">'+value.location+'</span></li>');
+      }
+     });   
+    });
+   });
+   
+   $('#result').on('click', 'li', function() {
+    var click_text = $(this).text().split('|');
+    $('#search').val($.trim(click_text[0]));
+    $("#result").html('');
+   });
+  });
+  </script>
+ 
+  <script type="text/javascript">
+     $('#messages').addClass("alert alert-success");
+  </script>
+  </body>
+</html>

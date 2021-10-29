@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Homepage</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!--Bootstrapicon-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <script src="https://kit.fontawesome.com/fb582823d6.js" crossorigin="anonymous"></script>
+    
+          <!--Feathericon-->
+          <script src="https://unpkg.com/feather-icons"></script>
+          <!--Link to CSS File-->
+          <link rel="stylesheet" href="/css/style.css">
+          <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+        
+        <!--Google Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    
+      </head>
+      <body>
+      <div class="page">
+  <!--Banner-->
+  <header class="bg-top mx-auto" style="position: relative;">
+    <div class="header-banner mx-auto container">
+      <div class="row">
+       <div class="col-6 pr-2"> 
+           <a itemprop="url" class="logo" href="#">
+           <img class="ban1" itemprop="logo" src="/images/Banner1.png" width="250" height="85">
+            </a>
+       </div>
+        <div class="col-4 pt-2">
+          <a itemprop="url" class="logo" href="#">
+           <img class="ban2" itemprop="logo" src="/images/banner2.jpg" width="635" height="73">
+           </a>
+        </div>
+     </div>
+    </div>
+    </header>
+        <%- include('layout') %>  
+
+        <div class="container" style="padding-top: 50px;">
+                    <h2 align="center">Search</h2>
+                    <h4 >ค้นหา : <% if(search) {%>
+                      <h5><%= search %></h5>
+                    <% } %></h4>
+    
+                    <hr>
+    
+    
+              <% if(search.length>0){ %>
+                <% if (locals.data) { %>
+                  <div class="row">
+                  <% for (d of data) { %> 
+                    <div class="col-3">
+              <div class="card" style="width: 18rem; padding-top: 20px;">
+                <div class="card-body">
+                  <img src="/uploads/<%= d.image %>" alt="" class="img-responsive image-istock">
+                  <h3 class="card-title"><a href="/dashboards/<%= d._id %>" style="text-decoration:none;"><%= d.listing_title %></a></h3>
+                  <h4 class="card-title"><%= d.projectname %></h4>
+                  <h5 class="card-text"><%= d.listing_price %></h5>
+                </div>
+              </div>
+            </div>
+              <% } %>
+            </div>
+              <% } %>
+          <% }%>       
+    
+                    
+        </div>
+
+      </div>
+
+
+
+<!--Footer-->
+<div class="container-fluid" style="margin-top: auto; margin-left: auto; padding-top: 20px;">
+  <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+<!-- Section: Social media -->
+<section
+class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+>
+<!-- Left -->
+<div class="me-5 d-none d-lg-block">
+  <span>Get connected with us on social networks:</span>
+</div>
+<!-- Left -->
+
+<!-- Right -->
+<div>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-google"></i>
+  </a>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="" class="me-4 text-reset">
+    <i class="fab fa-github"></i>
+  </a>
+</div>
+<!-- Right -->
+</section>
+<!-- Section: Social media -->
+
+<!-- Section: Links  -->
+<section class="">
+<div class="container text-center text-md-start mt-5">
+  <!-- Grid row -->
+  <div class="row mt-3">
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+      <!-- Content -->
+      <h6 class="text-uppercase fw-bold mb-4">
+        <i class="fas fa-gem me-3"></i>Dobaan Chiangmai
+      </h6>
+      <p>
+        เว็บไซต์อสังหาริมทรัพย์อันดับต้นๆของประเทศไทย ที่ที่เป็นจุดเริ่มต้นของผู้ที่กำลังมองหาอสังหาริมทรัพย์ ไม่ว่าจะเป็นการซื้อ-เช่าเพื่ออยู่อาศัย หรือลงทุน บนเว็บไซต์ Dobaan Chiangmai คุณจะพบกับอสังหาริมทรัพย์ทั้งประกาศขาย หรือให้เช่า บ้านเดี่ยว คอนโด ทาวน์เฮ้าส์ ทาวน์โฮม ที่ดิน อพาร์ทเมนท์ หอพัก และตึกแถว อาคารพาณิชย์หลากหลายรายการ รวมทั้งโครงการใหม่
+      </p>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+      <!-- Links -->
+      <h6 class="text-uppercase fw-bold mb-4">
+        ค้นหา
+      </h6>
+      <p>
+        <a href="#!" class="text-reset">สำหรับขาย</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">สำหรับเช่า</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">โครงการใหม่</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">บริษัทพัฒนาอสังหาริมทรัพย์</a>
+      </p>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+      <!-- Links -->
+      <h6 class="text-uppercase fw-bold mb-4">
+        เกี่ยวกับ
+      </h6>
+      <p>
+        <a href="#!" class="text-reset">เกี่ยวกับเรา</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">ติดต่อเรา</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">ร่วมงานกับเรา</a>
+      </p>
+      <p>
+        <a href="#!" class="text-reset">นโยบายความเป็นส่วนตัว</a>
+      </p>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+      <!-- Links -->
+      <h6 class="text-uppercase fw-bold mb-4">
+        ติดต่อเรา
+      </h6>
+      <p><i class="fas fa-home me-3"></i> ต.สุเทพ อ.เมืองเชียงใหม่ จ.เชียงใหม่</p>
+      <p>
+        <i class="fas fa-envelope me-3"></i>
+        m.wjiranon@gmail.com
+      </p>
+      <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+      <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+    </div>
+    <!-- Grid column -->
+  </div>
+  <!-- Grid row -->
+</div>
+</section>
+<!-- Section: Links  -->
+
+<!-- Copyright -->
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+© 2021 Copyright:
+<a class="text-reset fw-bold" href="https://mdbootstrap.com/">Dobaanchiangmai.com</a>
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->
+</div>      
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>     
+      </body>
+    </html>
+    
+
+
+
+
+
+    <!--
+    <form method="get" action="/dashboards/show-listings-search/">
+        <% 
+            let kw = (locals.q) ? q : ''
+        %>
+        <input type="text" name="q" placeholder="ค้นหา (ชื่อ)" value="<%= kw %>">
+        <button>ตกลง</button>
+    </form>
+    <h4>รายการข้อมูล</h4>
+    <% if(locals.listings){ %>
+        <% Object.values(listings).forEach(function(listinged){%>
+          <h3><%= listinged.title %></a></h3>
+          <h5><%= listinged.price %></h5>
+
+        <%})%>
+    <%}%>
+    -->

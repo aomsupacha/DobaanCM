@@ -1,0 +1,102 @@
+<!--Property page-->
+<div class="container" style="padding-top: 12px;">
+    <div class="row">
+        <main class="bred">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Overview</li>
+                </ol>
+            </nav>
+        </main> 
+        <h3><%= listinged.title %></h3>
+    <div class="col-8"> 
+       <div class="card" style="background-color: rgb(255, 255, 255);">
+         <div class="card-body">
+       <!--Test-->
+
+       <% if(listinged) {%>
+       <div class="wrapper-slide">
+       <div class="carousel slide article-slide" id="article-photo-carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner cont-slider">
+      
+          <div class="item active">
+            <img alt="" title="" src="/uploads/<%= listinged.image %>">
+          </div>
+          <div class="item">
+            <img alt="" title="" src="/uploads/<%= listinged.image %>">
+          </div>
+          <div class="item">
+            <img alt="" title="" src="/uploads/<%= listinged.image %>">
+          </div>
+          <div class="item">
+            <img alt="" title="" src="/uploads/<%= listinged.image %>">
+          </div>
+        </div>
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
+            <img alt="" src="/uploads/<%= listinged.image %>">
+          </li>
+          <li class="" data-slide-to="1" data-target="#article-photo-carousel">
+            <img alt="" src="/uploads/<%= listinged.image %>">
+          </li>
+          <li class="" data-slide-to="2" data-target="#article-photo-carousel">
+            <img alt="" src="/uploads/<%= listinged.image %>">
+          </li>
+          <li class="" data-slide-to="3" data-target="#article-photo-carousel">
+            <img alt="" src="/uploads/<%= listinged.image %>">
+          </li>
+        </ol>
+      </div>
+      </div>
+      <% } %>
+
+      <!--Detail-->
+      <div class="detail">
+        <p>รายละเอียด</p>
+        <hr>
+        <h3><%= listinged.description %></h3>
+
+      </div>
+    </div> <!--End card body-->    
+        
+       </div> 
+    </div>
+        <div class="col-4"> 
+            <div class="row">
+            <div class="card" style="background-color: rgb(255, 255, 255); ">
+                <div class="card-body" style="text-align: center; ">
+                    <p class="hh">ลงประกาศโดย</p>
+                    <h4 style="font-weight: bold; padding:0 auto;">Mw property</h4>
+                    <div class="d-grid gap-2" style="padding-top: 30px;">
+                        <button class="btn btn-primary" type="button"><i class="bi bi-telephone"></i> <h3><%= listinged.phone %></h3></button>
+                    </div>
+                    <div class="d-grid gap-2" style="padding-top: 15px;">
+                        <button class="btn btn-success" type="button">ติดต่อด้วย Line</button>
+                    </div>
+                    <div class="formname" style="padding-top: 15px;">
+                        <input class="form-control form-control-sm" type="text" placeholder="ชื่อ นามสกุล" aria-label=".form-control-sm example">
+                    </div>
+                    <div class="formemail" style="padding-top: 15px;">
+                        <input class="form-control form-control-sm" type="text" placeholder="อีเมลล์" aria-label=".form-control-sm example">
+                    </div>
+                    <div class="formtel" style="padding-top: 15px;">
+                        <input class="form-control form-control-sm" type="text" placeholder="เบอร์โทร" aria-label=".form-control-sm example">
+                    </div>
+                    <div class="form-floating" style="padding-top: 15px;">
+                        <textarea class="form-control" placeholder="ใส่ข้อความสำหรับสอบถามข้อมูล" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <label for="floatingTextarea2" style="color: rgb(156, 156, 156);"><h5>ใส่ข้อความสำหรับสอบถามข้อมูล</h5></label>
+                      </div>
+                      <div class="d-grid gap-2" style="padding-top: 15px;">
+                        <button class="btn btn-danger" type="button"><i class="bi bi-envelope" style="font-size: x-large; margin: 0 auto; align-items: center; "></i>สอบถามรายละเอียด</button>
+                    </div>  
+ 
+                </div>
+             </div> 
+             </div>
+        </div>
+        
+    </div>
+</div>
